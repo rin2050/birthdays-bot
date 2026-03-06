@@ -3,9 +3,8 @@ const { Client, EmbedBuilder } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.MessageContent,] });
 
 client.on('messageCreate', async message => {
-    if (!message.content.startsWith(prefix)) return
-
     const [command, ...args] = message.content.slice(prefix.length).split(/\s+/)
+    if (!message.content.startsWith(prefix)) return
     try {
 
   if (command === 'help') {
@@ -25,7 +24,6 @@ client.on('messageCreate', async message => {
         
     } catch (error) {
       const channel = await client.channels.fetch('1457044288784568473')
-  
       channel.send({ content: `<@592257486522810409> エラーが発生しました。\n\n${error}` });
     }
 });
