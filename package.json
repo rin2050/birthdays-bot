@@ -1,5 +1,5 @@
 {
-  "name": "discord-birthdays-bot",
+  "name": "discord-readme-bot",
   "scripts": {
     "start": "tsx src/index.ts",
     "build": "tsc",
